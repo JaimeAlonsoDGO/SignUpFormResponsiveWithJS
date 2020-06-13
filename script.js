@@ -12,20 +12,19 @@ function validateVoidSpace(userInput, errorIcon, errorText){
         userInput.style.border = '3px solid var(--red)';
         errorIcon.style.display = 'inline';
         errorText.style.display = 'block';
-        numberErrors = 1;
+        numberErrors +=1;
     }
     else{
         userInput.style.border = '1px solid var(--grayish-blue)';
         errorIcon.style.display = 'none';
         errorText.style.display = 'none';
-        numberErrors = 0;
     }
 }
 
 function validateName(){   
     let errorIcon = document.getElementById('error-icon-name');
     let errorText = document.getElementById('error-name');
-    validateVoidSpace(userName, errorIcon, errorText);
+    validateVoidSpace(userName, errorIcon, errorText);  
 }
 
 function validateLastName(){   
@@ -41,13 +40,12 @@ function validateEmail(){
         userEmail.style.border = '3px solid var(--red)';
         errorIcon.style.display = 'inline';
         errorText.style.display = 'block';
-        numberErrors = 1;
+        numberErrors +=1;   
     }
     else{
         userEmail.style.border = '1px solid var(--grayish-blue)';
         errorIcon.style.display = 'none';
         errorText.style.display = 'none';
-        numberErrors = 0;
     }
 }
 
@@ -70,4 +68,5 @@ myButton.onclick = function(){
         userPassword.value = '';
         alert('Thank you! Registration Completed');
     }
+    numberErrors = 0;
 }
